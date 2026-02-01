@@ -1,0 +1,53 @@
+# Ignore build outputs
+bin/
+obj/
+[Bb]uild/
+[Ll]ogs/
+
+# Visual Studio / VS for Mac
+.vs/
+.vscode/
+*.user
+*.userprefs
+*.suo
+*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+appsettings.Development.json
+secrets.json
+
+# Rider IDE
+.idea/
+
+# NuGet packages
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+# Test results
+TestResults/
+*.TestResults.*
+*.coverage
+*.coveragexml
+*.trx
+
+# Dotnet artifacts
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.dotCover
+*.log
+
+# Azure publish files
+*.azurePubxml
+*.publishsettings
+PublishScripts/
+
+# Mac bundle stuff
+*.dmg
+*.app

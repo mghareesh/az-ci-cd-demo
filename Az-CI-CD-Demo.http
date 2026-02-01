@@ -1,0 +1,6 @@
+@Az_CI_CD_Demo_HostAddress = http://localhost:5084
+
+GET {{Az_CI_CD_Demo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
