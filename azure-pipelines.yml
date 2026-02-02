@@ -1,19 +1,19 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# Starter pipeline for self-hosted Mac agent
 
 trigger:
-- main
+- main  # or your branch name
 
+# Use self-hosted agent pool
 pool:
-  vmImage: ubuntu-latest
+  name: Default
 
 steps:
-- script: echo Hello, world!
+# Simple one-line script to test the agent
+- script: echo "Hello World from Mac Agent!"
   displayName: 'Run a one-line script'
 
+# Multi-line script for future tasks (build/test/deploy)
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
+    echo "Add other tasks to build, test, and deploy your project."
+    echo "See https://aka.ms/yaml for guidance."
   displayName: 'Run a multi-line script'
