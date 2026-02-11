@@ -1,19 +1,21 @@
-# Starter pipeline for self-hosted Mac agent
-
 trigger:
-- main  # or your branch name
+- main
 
-# Use self-hosted agent pool
 pool:
   name: Default
 
-steps:
-# Simple one-line script to test the agent
-- script: echo "Hello World from Mac Agent!"
-  displayName: 'Run a one-line script'
+variables:
+  buildConfiguration: 'Release'
 
-# Multi-line script for future tasks (build/test/deploy)
-- script: |
-    echo "Add other tasks to build, test, and deploy your project."
-    echo "See https://aka.ms/yaml for guidance."
-  displayName: 'Run a multi-line script'
+steps:
+# Check SDK version
+- script: dotnet --version
+  displayName: 'Check .NET SDK Version'
+
+# Restore solution
+- script: dotnet restore Az-CI-CD-Demo.sln
+  displayName: 'Restore Solution'
+
+# Build solution
+- script: dotnet build Az-CI-CD-Demo.sln --configuration $(buildConfiguration) --no-restore
+  displayName: 'Build Solution'
