@@ -8,7 +8,7 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-# Check SDK version
+# Check .NET SDK version
 - script: dotnet --version
   displayName: 'Check .NET SDK Version'
 
@@ -19,3 +19,7 @@ steps:
 # Build solution
 - script: dotnet build Az-CI-CD-Demo.sln --configuration $(buildConfiguration) --no-restore
   displayName: 'Build Solution'
+
+# Run tests (will run only if build succeeds by default)
+- script: dotnet test Az-CI-CD-Demo.sln --configuration $(buildConfiguration)
+  displayName: 'Test Project'
